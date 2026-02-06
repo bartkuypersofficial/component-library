@@ -4,4 +4,14 @@
 
 .c-section {
   display: flow-root;
+  width: 100%;
+  margin-bottom: var(--space-sm);
+  background-color: var(--white);
+  border: var(--border-xxs) solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+}
+
+.is-dark .c-section {
+  background-color: var(--gray-800);
+  border-color: var(--gray-600);
 }

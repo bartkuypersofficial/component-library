@@ -7,9 +7,6 @@
   transition: max-width var(--transition-duration-medium) var(--transition-ease-standard);
   width: 100%;
   max-width: 100%;
-  background-color: var(--white);
-  border: var(--border-xxs) solid var(--border-color);
-  border-radius: var(--border-radius-sm);
 }
 
 .c-main--mobile { 
@@ -21,7 +18,7 @@
 }
 
 .c-main--desktop { 
-  max-width: var(--breakpoint-xl); 
+  max-width: var(--breakpoint-lg); 
 }
 
 .c-main--full { 
