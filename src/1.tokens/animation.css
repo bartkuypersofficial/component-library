@@ -1,0 +1,18 @@
+/* ==============================================
+//   Animations / Transitions
+// ============================================*/
+
+:root {
+  --transition-duration-fast:          0.15s;
+  --transition-duration-medium:        0.3s;
+  --transition-duration-slow:          0.5s;
+
+  --transition-ease-standard:          cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-ease-decelerate:        cubic-bezier(0.0, 0, 0.2, 1); 
+  --transition-ease-accelerate:        cubic-bezier(0.4, 0, 1, 1);
+
+  --transition-move-small:             8px;
+  --transition-move-medium:            16px;
+  --transition-scale-small:            0.95;
+  --transition-scale-medium:           1.05;
+}

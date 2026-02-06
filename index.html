@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Component Library</title>
+  <link rel="stylesheet" href="src/index.css?v=0.1">
+</head>
+<body>
+  <header class="c-header">
+    <button class="c-header__button" data-width="mobile" aria-pressed="false">Mobile</button>
+    <button class="c-header__button" data-width="tablet" aria-pressed="false">Tablet</button>
+    <button class="c-header__button" data-width="desktop" aria-pressed="false">Desktop</button>
+    <button class="c-header__button" data-width="full" aria-pressed="true">Full</button>
+  </header>
+
+  <template class="js-template">
+    <section class="c-section">
+      <header class="c-section__header">
+        <h2 class="c-section__title"></h2>
+      </header>
+      <div class="c-section__content"></div>
+    </section>
+  </template>
+
+  <main class="c-main  c-main--mobile  js-main"></main>
+  <script type="module" src="src/index.js?v=0.1"></script>
+</body>
+</html>

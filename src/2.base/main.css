@@ -1,0 +1,29 @@
+/* ==============================================
+//  Main
+// ============================================*/
+
+.c-main {
+  margin: 0 auto;
+  transition: max-width var(--transition-duration-medium) var(--transition-ease-standard);
+  width: 100%;
+  max-width: 100%;
+  background-color: var(--white);
+  border: var(--border-xxs) solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+}
+
+.c-main--mobile { 
+  max-width: var(--breakpoint-xs); 
+}
+
+.c-main--tablet { 
+  max-width: var(--breakpoint-md); 
+}
+
+.c-main--desktop { 
+  max-width: var(--breakpoint-xl); 
+}
+
+.c-main--full { 
+  max-width: 100%; 
+}

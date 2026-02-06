@@ -1,0 +1,27 @@
+/* ==============================================
+//  Borders
+// ============================================*/
+
+:root {
+  --border-xxs:                 1px;
+  --border-xs:                  1.5px;
+  --border-sm:                  2px;
+  --border-md:                  3px;
+  --border-lg:                  4px;
+
+  --border-color:               var(--gray-200);
+  --border-color-primary:       var(--color-primary);
+  --border-color-success:       var(--color-success);
+  --border-color-error:         var(--color-error);
+  --border-color-warning:       var(--color-warning);
+  --border-color-info:          var(--color-info);
+
+  --border-radius-xxs:          2px;
+  --border-radius-xs:           4px;
+  --border-radius-sm:           6px;
+  --border-radius-md:           8px;
+  --border-radius-lg:           12px;
+  --border-radius-xl:           16px;
+  --border-radius-xxl:          24px;
+  --border-radius-full:         50%;
+}
