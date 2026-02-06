@@ -1,6 +1,7 @@
 import { components } from './components.js';
 import { initComponents } from './4.assets/scripts/vanilla.components.js';
 import { initSwitcher } from './4.assets/scripts/vanilla.responsive.js';
+import { initDarkMode } from './4.assets/scripts/vanilla.darkmode.js';
 
 const main = document.querySelector('.js-main');
 const template = document.querySelector('.js-template');
@@ -12,6 +13,7 @@ const template = document.querySelector('.js-template');
  * @async
  * @function
  */
+
 (async () => {
   for (const component of components) {
     /**
@@ -31,5 +33,10 @@ const template = document.querySelector('.js-template');
   /**
    * Initialize the switcher functionality for the header buttons
    */
-  initSwitcher('.js-main', '.c-header__button');
+  initSwitcher('.js-main', '.js-viewport');
+
+  /**
+   * Initialize dark mode toggle on page load
+   */
+  initDarkMode('.js-darkmode');
 })();

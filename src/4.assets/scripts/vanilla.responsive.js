@@ -14,9 +14,9 @@ export function initSwitcher(mainElem, buttonsElem) {
 
   buttons.forEach(btn => {
     btn.addEventListener('click', () => {
-      const width = btn.dataset.width;
+      const width = btn.dataset.type;
 
-      // Remove all existing width classes and add the new one
+      // Remove all existing type classes and add the new one
       main.classList.remove('c-main--mobile', 'c-main--tablet', 'c-main--desktop', 'c-main--full');
       main.classList.add(`c-main--${width}`);
 

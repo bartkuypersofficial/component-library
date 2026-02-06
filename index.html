@@ -6,12 +6,18 @@
   <title>Component Library</title>
   <link rel="stylesheet" href="src/index.css?v=0.1">
 </head>
-<body>
+<body class="c-body">
   <header class="c-header">
-    <button class="c-header__button" data-width="mobile" aria-pressed="false">Mobile</button>
-    <button class="c-header__button" data-width="tablet" aria-pressed="false">Tablet</button>
-    <button class="c-header__button" data-width="desktop" aria-pressed="false">Desktop</button>
-    <button class="c-header__button" data-width="full" aria-pressed="true">Full</button>
+    <div class="c-header__logo">
+      <img src="./src/4.assets/images/logo.svg" alt="Bartowski" />
+    </div>
+
+    <button class="c-header__button  js-viewport" data-type="mobile" aria-pressed="false">Mobile</button>
+    <button class="c-header__button  js-viewport" data-type="tablet" aria-pressed="false">Tablet</button>
+    <button class="c-header__button  js-viewport" data-type="desktop" aria-pressed="false">Desktop</button>
+    <button class="c-header__button  js-viewport" data-type="full" aria-pressed="true">Full</button>
+
+    <button class="c-header__button  js-darkmode" data-type="darkmode" aria-pressed="false">Dark Mode</button>
   </header>
 
   <template class="js-template">

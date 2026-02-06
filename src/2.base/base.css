@@ -24,6 +24,11 @@ body {
   overflow-x: hidden;
 }
 
+body.is-dark {
+  background: var(--black);
+  color: var(--gray-100);
+}
+
 a {
   transition: color var(--transition-speed) var(--transition-ease);
   color: var(--color-primary);
