@@ -1,3 +1,10 @@
+/**
+ * List of all components to load.
+ * Each component has a `name` and a `path` to its HTML file.
+ *
+ * @type {Array<{name: string, path: string}>}
+ */
+
 export const components = [
   {
     name: 'Product Card',

@@ -1,3 +1,14 @@
+/**
+ * Loads a component's HTML from a given path.
+ *
+ * @async
+ * @function
+ * @param {Object} component - The component to load.
+ * @param {string} component.name - The name of the component.
+ * @param {string} component.path - The path to the component's HTML file.
+ * @returns {Promise<{name: string, html: string}>} The component with its HTML content.
+ */
+
 export const initComponents = async ({ name, path }) => {
   try {
     const response = await fetch(path);
