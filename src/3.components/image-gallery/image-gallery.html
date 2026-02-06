@@ -1,3 +1,32 @@
-<div class="c-image-gallery">
-  <p>content</p>
+<div class="c-image-gallery" role="list" aria-label="Image gallery">
+  <div class="c-image-gallery__item" role="listitem">
+    <button class="c-image-gallery__button  js-image-gallery-button" data-index="0" aria-label="View Image 1">
+      <img src="./src/4.assets/images/meerhoven.webp" class="c-image-gallery__img" alt="Meerhoven gallery image 1">
+    </button>
+  </div>
+  <div class="c-image-gallery__item" role="listitem">
+    <button class="c-image-gallery__button  js-image-gallery-button" data-index="1" aria-label="View Image 2">
+      <img src="./src/4.assets/images/meerhoven-2.webp" class="c-image-gallery__img" alt="Meerhoven gallery image 2">
+    </button>
+  </div>
+  <div class="c-image-gallery__item" role="listitem">
+    <button class="c-image-gallery__button  js-image-gallery-button" data-index="2" aria-label="View Image 3">
+      <img src="./src/4.assets/images/meerhoven-3.webp" class="c-image-gallery__img" alt="Meerhoven gallery image 3">
+    </button>
+  </div>
+  <div class="c-image-gallery__item" role="listitem">
+    <button class="c-image-gallery__button  js-image-gallery-button" data-index="3" aria-label="View Image 4 and see 2 more images">
+      <img src="./src/4.assets/images/meerhoven-4.webp" class="c-image-gallery__img" alt="Meerhoven gallery image 4">
+      <div class="c-image-gallery__overlay" aria-hidden="true">+2</div>
+    </button>
+  </div>
 </div>
+
+<dialog class="c-dialog js-dialog" id="dialog" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Expanded image view">
+  <div class="c-dialog__content">
+    <button class="c-dialog__close js-dialog-close" id="dialogClose" aria-label="Close dialog"></button>
+    <button class="c-dialog__prev js-dialog-prev" aria-label="Previous image">&#10094;</button>
+    <img src="" alt="" id="dialogImg" class="js-dialog-img">
+    <button class="c-dialog__next js-dialog-next" aria-label="Next image">&#10095;</button>
+  </div>
+</dialog>

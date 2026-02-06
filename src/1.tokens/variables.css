@@ -5,4 +5,7 @@
 :root {
   --scrollbar-color:              var(--gray-300);
   --scrollbar-width:              10px;
+
+  --gallery-nav-size-big:         40px;
+  --gallery-nav-size:             32px;
 }

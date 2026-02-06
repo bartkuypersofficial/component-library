@@ -38,10 +38,5 @@ export const components = [
     name: 'Image Gallery',
     path: './src/3.components/image-gallery/image-gallery.html',
     js: './3.components/image-gallery/image-gallery.js'
-  },
-  {
-    name: 'Contact Form',
-    path: './src/3.components/contact-form/contact-form.html',
-    js: './3.components/contact-form/contact-form.js'
   }
 ];
