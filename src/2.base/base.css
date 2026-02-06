@@ -2,37 +2,66 @@
 //  Base
 // ============================================*/
 
+/* Base elements */
 html {
-  font-size: var(--font-size-md);
+  box-sizing: border-box;
   height: 100%;
+  font-size: var(--font-size-md);
+  overflow-y: scroll;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   -ms-overflow-style: scrollbar;
-  box-sizing: border-box;
 }
 
 body {
-  font-family: var(--font-base);
-  font-size: var(--font-size-md);
   min-height: 100%;
   margin: 0;
   padding: var(--space-md);
-  background: var(--gray-100);
+  font-family: var(--font-base);
+  font-size: var(--font-size-md);
   color: var(--gray-800);
+  background: var(--gray-100);
   overflow-x: hidden;
 }
 
 body.is-dark {
-  background: var(--black);
   color: var(--gray-100);
+  background: var(--black);
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: var(--font-heading);
+  line-height: var(--line-height-md);
+}
+
+p,
+ul,
+ol {
+  margin: 0 0 var(--space-sm);
+}
+
+blockquote,
+dl,
+dd,
+fieldset,
+figure,
+pre {
+  margin: 0;
 }
 
 a {
-  transition: color var(--transition-speed) var(--transition-ease);
   color: var(--color-primary);
   text-decoration: underline;
+  transition: color var(--transition-speed) var(--transition-ease);
 
   &:not([class]):hover {
     color: var(--color-primary-hover);
@@ -50,56 +79,24 @@ hr {
   border-top: 1px solid var(--gray-300);
 }
 
-blockquote,
-dl,
-dd,
-ol,
-ul,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-pre,
-fieldset,
-figure,
-hr {
-  margin: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-heading);
-  line-height: var(--line-height-md);
-}
-
-p,
-ul,
-ol {
-  margin-bottom: var(--space-sm);
-}
-
+/* Selection */
 ::selection {
-  background: var(--gray-600);
   color: var(--gray-100);
+  background: var(--gray-600);
   text-shadow: none;
 }
 
-* {
-  scrollbar-width: thin;
-  scrollbar-color: var(--scrollbar-color) transparent;
-}
-
+/* Box sizing */
 *,
 *:before,
 *:after {
   box-sizing: inherit;
+}
+
+/* Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-color) transparent;
 }
 
 *::-webkit-scrollbar {

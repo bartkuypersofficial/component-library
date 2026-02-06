@@ -6,12 +6,20 @@
   display: flow-root;
   width: 100%;
   margin-bottom: var(--space-sm);
-  background-color: var(--white);
   border: var(--border-xxs) solid var(--border-color);
   border-radius: var(--border-radius-sm);
+  background-color: var(--white);
+}
+
+.c-section__header {
+  padding: var(--space-sm) var(--space-sm) 0;
+}
+
+.c-section__content {
+  display: flow-root;
 }
 
 .is-dark .c-section {
-  background-color: var(--gray-800);
   border-color: var(--gray-600);
+  background-color: var(--gray-800);
 }

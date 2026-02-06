@@ -4,6 +4,11 @@
 :root {
   /* Primary colors */
   --color-primary:       #b91c1c;
+  --color-primary-100:   #c73a3a;
+  --color-primary-200:   #d65a5a;
+  --color-primary-300:   #e47a7a;
+  --color-primary-400:   #f39a9a;
+  --color-primary-500:   #fbc6c6;
   --color-primary-hover: #ef4444;
 
   /* Surface & text */

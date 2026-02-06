@@ -7,36 +7,76 @@ const main = document.querySelector('.js-main');
 const template = document.querySelector('.js-template');
 
 /**
- * Loads and renders all components into the main section of the page.
- * Uses the template for consistency and then initializes the switcher.
+ * Immediately-invoked async function that loads and renders all UI components
+ * into the main section of the page.
+ *
+ * Each component is fetched using `initComponents`, cloned into a template,
+ * and appended to the DOM. If a component has associated JavaScript, it is
+ * dynamically imported and initialized for its own section only.
+ *
+ * After all components are rendered:
+ * 1. Initializes the switcher functionality for navigating between sections.
+ * 2. Initializes the dark mode toggle for the page.
  *
  * @async
  * @function
+ * @example
+ * // The function executes automatically, so no need to call it manually.
+ * // Components are rendered and initialized on page load.
  */
 
 (async () => {
   for (const component of components) {
     /**
-     * @type {{name: string, html: string}}
-     * @description The loaded component with its name and HTML content.
+     * Represents a single component with its metadata and HTML content.
+     *
+     * @typedef {Object} ComponentData
+     * @property {string} name - The human-readable name of the component.
+     * @property {string} html - The HTML markup for the component.
+     *
+     * @type {ComponentData}
      */
+
     const { name, html } = await initComponents(component);
 
-    // Clone the template and fill it with component data
+    // Clone the template and populate it with component data
     const clone = template.content.cloneNode(true);
     clone.querySelector('.c-section__title').textContent = name;
     clone.querySelector('.c-section__content').innerHTML = html;
+    
+    const sectionRoot = clone.querySelector('.c-section__content');
 
+    // Append the fully prepared section to the main container
     main.append(clone);
+
+    // Dynamically load and initialize component-specific JS if provided
+    if (component.js) {
+      const mod = await import(component.js);
+      if (mod.initComponent) {
+        /**
+         * Initialize JavaScript behavior for this specific component section.
+         * Ensures scripts do not interfere with other components.
+         *
+         * @param {HTMLElement} sectionRoot - Root element of the component's HTML.
+         */
+
+        mod.initComponent(sectionRoot);
+      }
+    }
   }
 
   /**
-   * Initialize the switcher functionality for the header buttons
+   * Initialize the switcher functionality for the header buttons.
+   * @param {string} containerSelector - Selector for the main container.
+   * @param {string} viewportSelector - Selector for the viewport element.
    */
+
   initSwitcher('.js-main', '.js-viewport');
 
   /**
-   * Initialize dark mode toggle on page load
+   * Initialize dark mode toggle on page load.
+   * @param {string} toggleSelector - Selector for the dark mode toggle button.
    */
+  
   initDarkMode('.js-darkmode');
 })();
