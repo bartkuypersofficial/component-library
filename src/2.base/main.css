@@ -3,10 +3,10 @@
 // ============================================*/
 
 .c-main {
-  margin: 0 auto;
-  transition: max-width var(--transition-duration-medium) var(--transition-ease-standard);
   width: 100%;
   max-width: 100%;
+  margin: 0 auto;
+  transition: max-width var(--transition-duration-medium) var(--transition-ease-standard);
 }
 
 .c-main--mobile { 
