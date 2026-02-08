@@ -25,6 +25,12 @@ const template = document.querySelector('.js-template');
  * // Components are rendered and initialized on page load.
  */
 
+/**
+ * Preload all component JS modules that Vite can statically analyze.
+ * Keys are file paths, values are async import functions.
+ */
+const componentModules = import.meta.glob('./3.components/**/*.js');
+
 (async () => {
   for (const component of components) {
     /**
@@ -37,21 +43,29 @@ const template = document.querySelector('.js-template');
      * @type {ComponentData}
      */
 
-    const { name, html } = await initComponents(component);
+    const {name, html} = await initComponents(component);
 
     // Clone the template and populate it with component data
     const clone = template.content.cloneNode(true);
-    clone.querySelector('.c-section__title').textContent = name;
-    clone.querySelector('.c-section__content').innerHTML = html;
+    clone.querySelector('.js-template-title').textContent = name;
+    clone.querySelector('.js-template-content').innerHTML = html;
     
-    const sectionRoot = clone.querySelector('.c-section__content');
+    const sectionRoot = clone.querySelector('.js-template-content');
 
     // Append the fully prepared section to the main container
     main.append(clone);
 
     // Dynamically load and initialize component-specific JS if provided
     if (component.js) {
-      const mod = await import(component.js);
+      const loader = componentModules[component.js];
+
+      if (!loader) {
+        console.warn(`Component script not found: ${component.js}`);
+        continue;
+      }
+
+      const mod = await loader();
+
       if (mod.initComponent) {
         /**
          * Initialize JavaScript behavior for this specific component section.
